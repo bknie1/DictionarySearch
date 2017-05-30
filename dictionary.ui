@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="tk.Frame" id="main_frame">
+    <property name="height">200</property>
+    <property name="padx">10</property>
+    <property name="pady">10</property>
+    <property name="width">200</property>
+    <layout>
+      <property name="propagate">True</property>
+    </layout>
+    <child>
+      <object class="tk.LabelFrame" id="lf_entry">
+        <property name="cursor">arrow</property>
+        <property name="font">TkDefaultFont</property>
+        <property name="height">200</property>
+        <property name="pady">0</property>
+        <property name="text" translatable="yes">Search</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="ipadx">10</property>
+          <property name="ipady">5</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+          <property name="sticky">w</property>
+        </layout>
+        <child>
+          <object class="tk.Label" id="lbl_word">
+            <property name="justify">right</property>
+            <property name="padx">0</property>
+            <property name="text" translatable="yes">Word:</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Entry" id="entry_word">
+            <bind add="" handler="callback" sequence="word_entry" />
+            <layout>
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.LabelFrame" id="lf_options">
+        <property name="height">175</property>
+        <property name="text" translatable="yes">Options</property>
+        <property name="width">175</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="ipadx">10</property>
+          <property name="ipady">10</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+          <property name="sticky">w</property>
+        </layout>
+        <child>
+          <object class="tk.Checkbutton" id="ch_synonyms">
+            <property name="text" translatable="yes">Synonyms</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Checkbutton" id="ch_antonyms">
+            <property name="text" translatable="yes">Antonyms</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Checkbutton" id="ch_rhyme">
+            <property name="text" translatable="yes">Rhymes</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">4</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Checkbutton" id="ch_examples">
+            <property name="text" translatable="yes">Examples</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">3</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Scale" id="sc_speed">
+            <property name="label" translatable="yes">Playback Speed</property>
+            <property name="orient">horizontal</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">5</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Message" id="msg_instructions">
+        <property name="text" translatable="yes">Welcome! Please begin by searching for a desired word using the prompt.</property>
+        <property name="width">175</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="ipadx">10</property>
+          <property name="ipady">10</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+          <property name="sticky">w</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="lbl_title">
+        <property name="font">system</property>
+        <property name="text" translatable="yes">Dictionary Tool</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="rowspan">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="bt_exit">
+        <property name="text" translatable="yes">Quit</property>
+        <bind add="" handler="callback" sequence="quit_app" />
+        <layout>
+          <property name="column">1</property>
+          <property name="ipadx">20</property>
+          <property name="padx">5</property>
+          <property name="propagate">True</property>
+          <property name="row">5</property>
+          <property name="sticky">se</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Label" id="lbl_output">
+        <property name="text" translatable="yes">Output</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+          <property name="sticky">w</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Text" id="txt_output">
+        <property name="height">10</property>
+        <property name="width">50</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="row">4</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="bt_copy">
+        <property name="text" translatable="yes">Copy to Clipboard</property>
+        <bind add="" handler="callback" sequence="copy_text" />
+        <layout>
+          <property name="column">0</property>
+          <property name="ipadx">20</property>
+          <property name="padx">5</property>
+          <property name="propagate">True</property>
+          <property name="row">5</property>
+          <property name="sticky">sw</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>
